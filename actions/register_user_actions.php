@@ -1,8 +1,6 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// Include necessary files and classes
 include_once(__DIR__ . '/../settings/core.php');
-
 include_once(__DIR__ . '/../controllers/general_controller.php');
 
 // Check if the form was submitted
@@ -16,35 +14,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = trim($_POST['Customer_City']);
     $user_role = 1;
 
-    
-    // Check if image file is an actual image or fake image
-    if(isset($_POST["submit"])) {
-        $target_dir = "../img/user_profile";
-        $file = $_FILES["Customer_Image"];
-        $fileName = $file["name"];
-        $fileTmpName = $file["tmp_name"];
-        $fileError = $file["error"];
-    	$RandomNum   = time();
-        $ImageName      = str_replace(' ','-',strtolower($file['name'][0]));
-        $ImageType      = $file['type'][0];
-        $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
-        $ImageExt=str_replace('.','',$ImageExt);
-        $ImageName=preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
-        $NewImageName = $ImageName.'-'.$RandomNum.'.'.$ImageExt;
-	    $ret[$NewImageName]= $target_dir.$NewImageName;
 
-            // Handle file upload for customer image
-        $target_file = $target_dir ."/". $NewImageName;
-        move_uploaded_file($fileTmpName[0],$target_dir."/".$NewImageName );
+    // Check if the email already exists
+    $emailExists = check_user_by_email($email);
 
-        if ($fileError === 0){
-            add_user_ctr($full_Name, $email, $password, $country, $city, $phone, $target_file, $user_role);
-            header('Location: ../index.php');
+    if ($emailExists) {
+        // Email already exists, return error message
+        $response = array("success" => false, "message" => "Email already exists in the database");
+        echo json_encode($response);
+        exit();
+    } else {
+        // Call the controller function to add a new user
+        $registrationResult = $customer->register_user($full_Name, $email, $password, $country, $city, $phone, $user_role);
+
+        if ($registrationResult) {
+            // Registration successful
+            $response = array("success" => true, "message" => "Signup successful!");
+            echo json_encode($response);
+            exit();
         } else {
-            echo "Error Uploading the Image";
+            // Registration failed
+            $response = array("success" => false, "message" => "Error occurred during registration");
+            echo json_encode($response);
+            exit();
         }
     }
-
-
 }
 ?>

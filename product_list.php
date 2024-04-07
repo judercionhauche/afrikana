@@ -1,3 +1,13 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+session_start();
+include_once ("./controllers/general_controller.php");
+$categories = get_all_categories();
+$brands = get_all_brands();
+
+?>
+
 <!doctype html>
 <html lang="zxx">
 
@@ -135,31 +145,28 @@
                 <div class="col-md-4">
                     <div class="product_sidebar">
                         <div class="single_sedebar">
-                            <form action="#">
-                                <input type="text" name="#" placeholder="Search keyword">
-                                <i class="ti-search"></i>
-                            </form>
+                        <form action="actions/search_actions.php" class="d-flex justify-content-between search-inner" method="POST">
+                                <input type="text" class="form-control" id="search_input" placeholder="Search Products" name="search_query">
+                                <button type="submit" class="btn" value= "search" name= "search_data_product">Search</button>
+                        </form> 
                         </div>
                         <div class="single_sedebar">
-                            <div class="select_option">
-                                <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
-                                <div class="select_option_dropdown">
-                                    <p><a href="#">Category 1</a></p>
-                                    <p><a href="#">Category 2</a></p>
-                                    <p><a href="#">Category 3</a></p>
-                                    <p><a href="#">Category 4</a></p>
-                                </div>
-                            </div>
-                        </div>
+    <div class="select_option">
+        <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
+        <div class="select_option_dropdown">
+            <?php if (!empty($categories)) : ?>
+                <?php foreach ($categories as $category) : ?>
+                    <p><a href="product_list.php" data-catid="<?php echo $category['cat_id']; ?>"><?php echo $category['cat_name']; ?></a></p>
+                <?php endforeach; ?>
+                
+            <?php else : ?>
+                <p>No categories available</p>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
                         <div class="single_sedebar">
                             <div class="select_option">
-                                <div class="select_option_list">Type <i class="right fas fa-caret-down"></i> </div>
-                                <div class="select_option_dropdown">
-                                    <p><a href="#">Type 1</a></p>
-                                    <p><a href="#">Type 2</a></p>
-                                    <p><a href="#">Type 3</a></p>
-                                    <p><a href="#">Type 4</a></p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -169,21 +176,43 @@
                         <div class="row">
                      <!-- fetching products from products table-->
                      <?php
-                            include_once(__DIR__ . '/controllers/general_controller.php');
-                            $products = fetch_all_products();
-                            foreach ($products as $product): ?>
-                              
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="single_product_item">
-                                        <div style="width: 100%; height: 250px;" class="img_container">
-                                            <img style="width: 100%; height: 100%; object-fit: cover;" src="img/uploads/<?= $product["product_image"]; ?>" alt="<?php echo $product["product_title"]; ?>" class="img-fluid">
-                                        </div>
-                                        <h3> <a href="single-product.php"><?php echo htmlspecialchars($product["product_title"]); ?></a> </h3>
-                                        <p>From $<?php echo htmlspecialchars($product["product_price"]); ?></p>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                
+include_once(__DIR__ . '/controllers/general_controller.php');
+
+// Fetch all products
+$products = fetch_all_products();
+
+// Initialize search query variable
+$search_query = '';
+
+// Check if a search query is present
+if (isset($_GET['search_query'])) {
+    $search_query = $_GET['search_query'];
+}
+
+    foreach ($products as $product): ?>
+        <?php
+        // Check if the product matches the search query, or if no search query is present
+        $title_match = strpos(strtolower($product['product_title'] ?? ''), strtolower($search_query)) !== false;
+        $desc_match = strpos(strtolower($product['product_desc'] ?? ''), strtolower($search_query)) !== false;
+        
+        // Check if 'product_keywords' key exists and handle null case
+        $keywords_match = isset($product['product_keywords']) && strpos(strtolower($product['product_keywords']), strtolower($search_query)) !== false;
+        
+        // Display the product if it matches the search query, or if no search query is present
+        if ($title_match || $desc_match || $keywords_match || $search_query === ''): ?>
+            <div class="col-lg-6 col-sm-6">
+                <div class="single_product_item">
+                    <div style="width: 100%; height: 250px;" class="img_container">
+                        <img style="width: 100%; height: 100%; object-fit: cover;" src="img/uploads/<?= $product["product_image"] ?? ''; ?>" alt="<?php echo $product["product_title"] ?? ''; ?>" class="img-fluid">
+                    </div>
+                    <h3><a href="single-product.php?id=<?= $product["product_id"];?>"><?php echo htmlspecialchars($product["product_title"] ?? ''); ?></a></h3>
+                    <p>From $<?php echo htmlspecialchars($product["product_price"] ?? ''); ?></p>
+                </div>
+            </div>
+        <?php endif;
+    endforeach;
+    ?>
+     
                     
                     </div>
                          
@@ -304,7 +333,7 @@
                         <div class="col-lg-8">
                             <div class="footer_menu">
                                 <div class="footer_logo">
-                                    <a href="index.php"><img src="img/logo.png" alt="#"></a>
+                                    <a href="index.php"><img src="img/Afrikanah.png" alt="#"></a>
                                 </div>
                                 <div class="footer_menu_item">
                                     <a href="index.php">Home</a>

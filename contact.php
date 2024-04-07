@@ -32,9 +32,9 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12">
+
                     <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.php" style="position: absolute; left: 0; top: 5;"><img src="img/Afrikanah.png" alt="Logo" style="max-width: 150px; max-height: 90px;"></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+`                        <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
@@ -42,7 +42,10 @@
 
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
+                            <a class="navbar-brand" href="index.php" style="position: absolute; left: 0; top: 5;"><img src="img/Afrikanah.png" alt="Logo" style="max-width: 150px; max-height: 90px;"></a>
+
                                 <li class="nav-item">
+
                                     <a class="nav-link" href="index.php">Home</a>
                                 </li>
                                 <li class="nav-item">
@@ -55,59 +58,39 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="product_list.php"> product list</a>
-                                        <a class="dropdown-item" href="single-product.php">product details</a>
-                                        
                                     </div>
                                 </li>
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_3"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         pages
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="login.php"> 
-                                            login
-                                            
-                                        </a>
+                                       
                                         <a class="dropdown-item" href="checkout.php">product checkout</a>
                                         <a class="dropdown-item" href="cart.php">shopping cart</a>
                                         <a class="dropdown-item" href="confirmation.php">confirmation</a>
-                                        <a class="dropdown-item" href="elements.php">elements</a>
                                     </div>
                                 </li>
                                 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_2"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.php"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.php">Single blog</a>
-                                    </div>
+                                    
+                                    
                                 </li>
                                 
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
+                                
                             </ul>
+                            
                         </div>
                         <div class="hearer_icon d-flex align-items-center">
                             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <a href="cart.php">
                                 <i class="flaticon-shopping-cart-black-shape"></i>
                             </a>
-                            <!-- <div class="dropdown cart">
-                                <a class="dropdown-toggle" href="cart" id="navbarDropdown3" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="flaticon-shopping-cart-black-shape"></i>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <div class="single_product">
-    
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </nav>
                 </div>
@@ -116,8 +99,8 @@
         <div class="search_input" id="search_input_box">
             <div class="container ">
                 <form class="d-flex justify-content-between search-inner">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                    <button type="submit" class="btn"></button>
+                    <input type="text" class="form-control" id="search_input" placeholder="Search Here" name="search_data">
+                    <button type="submit" class="btn" value= "search" name= "search_data_product">Search</button>
                     <span class="ti-close" id="close_search" title="Close Search"></span>
                 </form>
             </div>
@@ -140,47 +123,8 @@
     <!-- breadcrumb part end-->
 
   <!-- ================ contact section start ================= -->
-  <section class="contact-section section_padding">
-    <div class="container">
-      <div class="d-none d-sm-block mb-5 pb-4">
-        <div id="map" style="height: 480px;"></div>
-        <script>
-          function initMap() {
-            var uluru = {
-              lat: -25.363,
-              lng: 131.044
-            };
-            var grayStyles = [{
-                featureType: "all",
-                stylers: [{
-                    saturation: -90
-                  },
-                  {
-                    lightness: 50
-                  }
-                ]
-              },
-              {
-                elementType: 'labels.text.fill',
-                stylers: [{
-                  color: '#ccdee9'
-                }]
-              }
-            ];
-            var map = new google.maps.Map(document.getElementById('map'), {
-              center: {
-                lat: -31.197,
-                lng: 150.744
-              },
-              zoom: 9,
-              styles: grayStyles,
-              scrollwheel: false
-            });
-          }
-        </script>
-        <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap">
-        </script>
+ 
+       
 
       </div>
 
@@ -229,21 +173,21 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
-              <h3>Buttonwood, California.</h3>
-              <p>Rosemead, CA 91770</p>
+              <h3>Berekuso, Ashesi University.</h3>
+              <p>1 University Avenue, Berekuso</p>
             </div>
           </div>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
             <div class="media-body">
-              <h3>00 (440) 9865 562</h3>
+              <h3>+233 363268569</h3>
               <p>Mon to Fri 9am to 6pm</p>
             </div>
           </div>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h3>support@colorlib.com</h3>
+              <h3>afrikanawellness@gmail.com</h3>
               <p>Send us your query anytime!</p>
             </div>
           </div>
@@ -261,7 +205,7 @@
                     <div class="col-lg-8">
                         <div class="footer_menu">
                             <div class="footer_logo">
-                                <a href="index.php"><img src="img/logo.png" alt="#"></a>
+                                <a href="index.php"><img src="img/Afrikanah.png" alt="#"></a>
                             </div>
                             <div class="footer_menu_item">
                                 <a href="index.php">Home</a>
@@ -291,7 +235,7 @@
                     <div class="col-lg-12">
                         <div class="copyright_text">
                             <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
                             <div class="copyright_link">
                                 <a href="#">Turms & Conditions</a>

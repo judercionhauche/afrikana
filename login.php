@@ -148,9 +148,9 @@
                         <div class="login_part_form_iner">
                             <h3>Welcome Back ! <br>
                                 Please Sign in now</h3>
-                            <form action= "./actions/login_actions.php"  class="row contact_form" method="post" >
+                            <form action= "actions/login_actions.php"  class="row contact_form" method="post" >
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="name" name="name" value=""
+                                    <input type="text" class="form-control" id="name" name="email" value=""
                                         placeholder="Username">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
@@ -254,6 +254,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/mail-script.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
+    <!-- <script src="../afrikana/js/login_validation.js"></script> -->
+
 </body>
     
 </html>

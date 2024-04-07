@@ -24,7 +24,6 @@
                 <?php
                 include_once(__DIR__ . '/controllers/general_controller.php');
                 $brands = get_all_brands(); // Ensure this function call matches your setup
-                // $brands = delete_brand(brand_id:);
 
              foreach ($brands as $brand): ?>
                     <tr>

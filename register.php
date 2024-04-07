@@ -34,15 +34,12 @@
 
                 <label for="city">Customer City:</label>
                 <input type="text" id="city" name="Customer_City" required>
-
-                <label for="image">Customer Image:</label>
-                <input type="file" id="image" name="Customer_Image" accept="image/*">
             
                 <button type="submit" id = "register" name="submit">Register</button>
                 <p class="login">Already have an account? <a href="Signin.php">Login</a></p>
             </form>
         </div>
-        <script src="js/registerValidation.js"></script>
+        <script src="js/register_val.js"></script>
     </div>
 </body>
 </html>

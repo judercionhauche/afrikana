@@ -8,10 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sanitize the POST data to prevent XSS or SQL Injection
     // $cat_name = filter_input(INPUT_POST, 'cat_name', FILTER_SANITIZE_STRING);
-
-
     //image upload
-
 
     $product_cat = $_POST["productCategory"];
     $product_brand = $_POST["productBrand"];

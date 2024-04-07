@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Function to check if the user is logged in
 function isLoggedIn() {
-    return isset($_SESSION['username']);
+    return isset($_SESSION['customer_id']);
 }
 
 // Function to check if the logged-in user is an admin
@@ -17,7 +17,7 @@ function isAdmin() {
 // Function to redirect a user to the login page if they are not logged in
 function verifyLogin() {
     if (!isLoggedIn()) {
-        header('Location: login.php'); // Redirect to login page
+        header('Location: ../login.php'); // Redirect to login page
         exit();
     }
 }

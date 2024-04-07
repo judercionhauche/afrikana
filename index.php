@@ -1,3 +1,10 @@
+<?php
+session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+?>
+
 <!doctype html>
 <html lang="zxx">
 
@@ -25,6 +32,7 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <style>
 
     .banner_img img {
@@ -65,41 +73,35 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="product_list.php"> product list</a>
-                                        <a class="dropdown-item" href="single-product.php">product details</a>
-                                        
                                     </div>
                                 </li>
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_3"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         pages
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="login.php"> 
-                                            login    
-                                        </a>
+                                       
                                         <a class="dropdown-item" href="checkout.php">product checkout</a>
                                         <a class="dropdown-item" href="cart.php">shopping cart</a>
                                         <a class="dropdown-item" href="confirmation.php">confirmation</a>
-                                        <a class="dropdown-item" href="elements.php">elements</a>
                                     </div>
                                 </li>
                                 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_2"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.php"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.php">Single blog</a>
-                                    </div>
+                                    
+                                    
                                 </li>
                                 
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login.php">login</a>
+                                </li>
                             </ul>
+                            
                         </div>
                         <div class="hearer_icon d-flex align-items-center">
                             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
@@ -114,8 +116,8 @@
         <div class="search_input" id="search_input_box">
             <div class="container ">
                 <form class="d-flex justify-content-between search-inner">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                    <button type="submit" class="btn"></button>
+                    <input type="text" class="form-control" id="search_input" placeholder="Search Here" name="search_data">
+                    <button type="submit" class="btn" value= "search" name= "search_data_product">Search</button>
                     <span class="ti-close" id="close_search" title="Close Search"></span>
                 </form>
             </div>
@@ -130,7 +132,7 @@
                 <div class="col-md-5">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h1>Welcome to Afrikana Welness!</h1>
+                            <h1>Welcome to Afrikana Wellness!</h1>
                             <p>Empowering Wellness, One Stress at a Time!</p>
                             <a href="product_list.php" class="btn_1">shop now</a>
                         </div>
@@ -153,16 +155,14 @@
                         <div class="row align-items-center justify-content-between">
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_product_img">
-                                    <img src="img/single_product_1.png" class="img-fluid" alt="#">
+                                    <img src="img/uploads/chocolate-1711893401.webp" class="img-fluid" alt="#">
                                     <img src="img/product_overlay.png" alt="#" class="product_overlay img-fluid">
                                 </div>
                             </div>
                             <div class="col-lg-5 col-sm-6">
                                 <div class="single_product_content">
-                                    <h5>Started from $10</h5>
-                                    <h2> <a href="single-product.php">Printed memory foam 
-                                        brief modern throw 
-                                        pillow case</a> </h2>
+                                    <h5>Stars from 50GHC</h5>
+                                    <h2> <a href="single-product.php">Urban Platter 100% Dark Chocolate Buttons - Intense, Plant-Based Indulgence</a> </h2>
                                     <a href="product_list.php" class="btn_3">Explore Now</a>
                                 </div>
                             </div>
@@ -172,16 +172,14 @@
                         <div class="row align-items-center justify-content-between">
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_product_img">
-                                    <img src="img/single_product_2.png" class="img-fluid" alt="#">
+                                    <img src="img/YGT.jpg" class="img-fluid" alt="#">
                                     <img src="img/product_overlay.png" alt="#" class="product_overlay img-fluid">
                                 </div>
                             </div>
                             <div class="col-lg-5 col-sm-6">
                                 <div class="single_product_content">
-                                    <h5>Started from $10</h5>
-                                    <h2> <a href="single-product.php">Printed memory foam 
-                                        brief modern throw 
-                                        pillow case</a> </h2>
+                                    <h5>Starts from 150GHC</h5>
+                                    <h2> <a href="single-product.php">Afrikanah Wellness Shirt: Embracing Authenticity with African Prints</a> </h2>
                                     <a href="product_list.php" class="btn_3">Explore Now</a>
                                 </div>
                             </div>
@@ -191,16 +189,14 @@
                         <div class="row align-items-center justify-content-between">
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_product_img">
-                                    <img src="img/single_product_3.png" class="img-fluid" alt="#">
+                                    <img src="img/AfrikanahjournalBlack.jpg" class="img-fluid" alt="#">
                                     <img src="img/product_overlay.png" alt="#" class="product_overlay img-fluid">
                                 </div>
                             </div>
                             <div class="col-lg-5 col-sm-6">
                                 <div class="single_product_content">
-                                    <h5>Started from $10</h5>
-                                    <h2> <a href="single-product.php">Printed memory foam 
-                                            brief modern throw 
-                                            pillow case</a> </h2>
+                                    <h5>Starts from 40GH</h5>
+                                    <h2> <a href="single-product.php" style="height:200px">Afrikanah Journal, color: black: Sleek and Stylish</a> </h2>
                                     <a href="product_list.php" class="btn_3">Explore Now</a>
                                 </div>
                             </div>
@@ -212,68 +208,52 @@
     </section>
     <!-- product list end-->
 
-
-    <!-- trending item start-->
-    <section class="trending_items">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_tittle text-center">
-                        <h2>Trending Items</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <div class="single_product_item_thumb">
-                            <img src="img/tranding_item/tranding_item_1.png" alt="#" class="img-fluid">
-                        </div>
-                        <h3> <a href="single-product.php">Cervical pillow for airplane
-                        car office nap pillow</a> </h3>
-                        <p>From $5</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <img src="img/tranding_item/tranding_item_2.png" alt="#" class="img-fluid">
-                        <h3> <a href="single-product.php">Foam filling cotton slow rebound pillows</a> </h3>
-                        <p>From $5</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <img src="img/tranding_item/tranding_item_3.png" alt="#" class="img-fluid">
-                        <h3> <a href="single-product.php">Memory foam filling cotton Slow rebound pillows</a> </h3>
-                        <p>From $5</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <img src="img/tranding_item/tranding_item_4.png" alt="#" class="img-fluid">
-                        <h3> <a href="single-product.php">Cervical pillow for airplane
-                        car office nap pillow</a> </h3>
-                        <p>From $5</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <img src="img/tranding_item/tranding_item_5.png" alt="#" class="img-fluid">
-                        <h3> <a href="single-product.php">Foam filling cotton slow rebound pillows</a> </h3>
-                        <p>From $5</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_product_item">
-                        <img src="img/tranding_item/tranding_item_6.png" alt="#" class="img-fluid">
-                        <h3> <a href="single-product.php">Memory foam filling cotton Slow rebound pillows</a> </h3>
-                        <p>From $5</p>
-                    </div>
+<!-- trending item start-->
+<section class="trending_items">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_tittle text-center">
+                    <h2>Trending Items</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- trending item end-->
+        <div class="row">
+            <?php
+            require_once('controllers/general_controller.php');
+            // Retrieve trending products from the database
+            $trending_products = select_trending_products();
+
+            // Check if there are any trending products
+            if ($trending_products) {
+                // Loop through each trending product
+                foreach ($trending_products as $product) {
+                    ?>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="single_product_item">
+                            <div class="single_product_item_thumb">
+                                <img src="img/uploads/<?php echo $product['product_image']; ?>" alt="<?php echo $product['product_title']; ?>" class="img-fluid">
+                            </div>
+                            <h3> <a href="single-product.php"><?php echo $product['product_title']; ?></a> </h3>
+                            <p>From GHC <?php echo $product['product_price']; ?></p>
+                        </div>
+                    </div>
+                    <?php
+                }
+            } else {
+                // If no trending products are found
+                ?>
+                <div class="col-lg-12">
+                    <p>No trending items found.</p>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+</section>
+<!-- trending item end-->
+
 
     <!-- client review part here -->
     <section class="client_review">
@@ -285,22 +265,22 @@
                             <div class="client_img">
                                 <img src="img/client.png" alt="#">
                             </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
+                            <p>Buying from Afrikanah Wellness has been nothing but a remarkable experience. Delivery on time! Everything about them is amazing. I can say I am stress free because of them"".</p>
+                            <h5>- John Self</h5>
                         </div>
                         <div class="single_client_review">
                             <div class="client_img">
                                 <img src="img/client_1.png" alt="#">
                             </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
+                            <p>"Afrikanah Wellness has truly transformed my wellness journey. Their products are not only effective but also delivered promptly. I've never felt better! Thank you for making self-care so accessible and stress-free!"</p>
+                            <h5>- Stanlely Ndlovu</h5>
                         </div>
                         <div class="single_client_review">
                             <div class="client_img">
                                 <img src="img/client_2.png" alt="#">
                             </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
+                            <p>"I can't thank Afrikanah Wellness enough for their outstanding service and top-notch products. From the moment I placed my order to the speedy delivery, everything was impeccable. I've never felt more rejuvenated and stress-free. Highly recommend!"</p>
+                            <h5>- Joseph Mensah</h5>
                         </div>
                     </div>
                 </div>
@@ -313,20 +293,7 @@
     <!-- feature part here -->
     <section class="feature_part section_padding">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <div class="feature_part_tittle">
-                        <h3>Credibly innovate granular
-                        internal or organic sources
-                        whereas standards.</h3>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="feature_part_content">
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness.</p>
-                    </div>
-                </div>
-            </div>
+                
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_feature_part">
@@ -364,7 +331,7 @@
                 <div class="col-lg-8">
                     <div class="subscribe_part_content">
                         <h2>Get promotions & updates!</h2>
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
+                        <p>As Afrikanah wellness, we always have specialised and exclusive products to offer!.</p>
                         <div class="subscribe_form">
                             <input type="email" placeholder="Enter your mail">
                             <a href="#" class="btn_1">Subscribe</a>
@@ -384,14 +351,13 @@
                     <div class="col-lg-8">
                         <div class="footer_menu">
                             <div class="footer_logo">
-                                <a href="index.php"><img src="img/logo.png" alt="#"></a>
+                                <a href="index.php"><img src="img/Afrikanah.png" alt="#"></a>
                             </div>
                             <div class="footer_menu_item">
                                 <a href="index.php">Home</a>
                                 <a href="about.php">About</a>
                                 <a href="product_list.php">Products</a>
                                 <a href="#">Pages</a>
-                                <a href="blog.php">Blog</a>
                                 <a href="contact.php">Contact</a>
                             </div>
                         </div>
@@ -414,7 +380,7 @@
                     <div class="col-lg-12">
                         <div class="copyright_text">
                             <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
                             <div class="copyright_link">
                                 <a href="#">Turms & Conditions</a>

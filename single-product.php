@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="zxx">
 
@@ -33,10 +36,8 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.php" style="position: absolute; left: 0; top: 5;"><img src="img/Afrikanah.png" alt="Logo" style="max-width: 150px; max-height: 90px;"></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="navbar-brand" href="index.php" style="position: absolute; left: 0; top: 5;"><img src="img/Afrikanah.png" alt="Logo" style="max-width: 150px; max-height: 90px;"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
 
@@ -49,25 +50,23 @@
                                     <a class="nav-link" href="about.php">about</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_1"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         product
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="product_list.php"> product list</a>
                                         <a class="dropdown-item" href="single-product.php">product details</a>
-                                        
+
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_3"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         pages
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="login.php"> 
+                                        <a class="dropdown-item" href="login.php">
                                             login
-                                            
+
                                         </a>
                                         <a class="dropdown-item" href="checkout.php">product checkout</a>
                                         <a class="dropdown-item" href="cart.php">shopping cart</a>
@@ -75,10 +74,9 @@
                                         <a class="dropdown-item" href="elements.php">elements</a>
                                     </div>
                                 </li>
-                                
+
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_2"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         blog
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
@@ -86,7 +84,7 @@
                                         <a class="dropdown-item" href="single-blog.php">Single blog</a>
                                     </div>
                                 </li>
-                                
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
@@ -127,78 +125,86 @@
     </section>
     <!-- breadcrumb part end-->
 
-  <!--================Single Product Area =================-->
-  <div class="product_image_area">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-12">
-          <div class="product_img_slide owl-carousel">
-            <div class="single_product_img">
-              <img src="img/product/single_product.png" alt="#" class="img-fluid">
-            </div>
-            <div class="single_product_img">
-              <img src="img/product/single_product.png" alt="#" class="img-fluid">
-            </div>
-            <div class="single_product_img">
-              <img src="img/product/single_product.png" alt="#" class="img-fluid">
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-8">
-          <div class="single_product_text text-center">
-            <h3>Foam filling cotton slow <br>
-                rebound pillows</h3>
-            <p>
-                Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
-            </p>
-            <div class="card_area">
-                <div class="product_count_area">
-                    <p>Quantity</p>
-                    <div class="product_count d-inline-block">
-                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                        <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
-                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
-                    </div>
-                    <p>$5</p>
-                </div>
-              <div class="add_to_cart">
-                  <a href="#" class="btn_3">add to cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--================End Single Product Area =================-->
-   <!-- subscribe part here -->
-   <section class="subscribe_part section_padding">
-      <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-lg-8">
-                  <div class="subscribe_part_content">
-                      <h2>Get promotions & updates!</h2>
-                      <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
-                      <div class="subscribe_form">
-                          <input type="email" placeholder="Enter your mail">
-                          <a href="#" class="btn_1">Subscribe</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  <!-- subscribe part end -->
+    <!--================Single Product Area =================-->
+    <!--================Single Product Area =================-->
+    <div class="product_image_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="product_img_slide owl-carousel">
+                        <?php
+                        $product_id = $_GET['id'];
+                        include_once(__DIR__ . '/controllers/general_controller.php');
+                        $customer_id = $_SESSION['customer_id'];
 
-  <!--::footer_part start::-->
-  <footer class="footer_part">
+                        $product = fetch_one_product($product_id);
+                        ?>
+                        <div class="single_product_img">
+                            <!-- Use PHP to dynamically set the image source -->
+                        </div>
+                        <img src="img/uploads/<?php echo $product['product_image']; ?>" alt="<?php echo $product['product_title']; ?>" class="img-fluid">
+
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="single_product_text text-center">
+                        <h3><?php echo htmlspecialchars($product["product_title"]); ?></h3>
+                        <p><?php echo htmlspecialchars($product["product_desc"]); ?></p>
+
+                        <form action="actions/add_to_cart_actions.php" method="POST">
+                            <input type="hidden" name="p_id" value="<?php echo $product['product_id']; ?>">
+                            <input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>"> <!-- Assuming $customer_id contains the customer's ID -->
+                            <div class="card_area">
+                                <div class="product_count_area">
+                                    <p>Quantity</p>
+                                    <div class="product_count d-inline-block">
+                                        <div class="">
+                                            <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                                            <input name="qty" class="product_count_item input-number" type="text" value="1" min="0" max="10">
+                                            <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                                        </div>
+                                    </div>
+                                    <p>$<?php echo htmlspecialchars($product["product_price"]); ?></p>
+                                </div>
+                            </div>
+                            <button type="submit" name="submit" class="btn_3" style="margin-top: 40px;">add to cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================End Single Product Area =================-->
+
+    <!--================End Single Product Area =================-->
+    <!-- subscribe part here -->
+    <section class="subscribe_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="subscribe_part_content">
+                        <h2>Get promotions & updates!</h2>
+                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
+                        <div class="subscribe_form">
+                            <input type="email" placeholder="Enter your mail">
+                            <a href="#" class="btn_1">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- subscribe part end -->
+
+    <!--::footer_part start::-->
+    <footer class="footer_part">
         <div class="footer_iner">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-lg-8">
                         <div class="footer_menu">
                             <div class="footer_logo">
-                                <a href="index.php"><img src="img/logo.png" alt="#"></a>
+                                <a href="index.php"><img src="img/Afrikanah.png" alt="#"></a>
                             </div>
                             <div class="footer_menu_item">
                                 <a href="index.php">Home</a>
@@ -221,15 +227,17 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="copyright_part">
             <div class="container">
                 <div class="row ">
                     <div class="col-lg-12">
                         <div class="copyright_text">
                             <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
+                                Copyright &copy;<script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
                             <div class="copyright_link">
                                 <a href="#">Turms & Conditions</a>
                                 <a href="#">FAQ</a>
