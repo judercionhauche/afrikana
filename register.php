@@ -39,7 +39,7 @@
                 <p class="login">Already have an account? <a href="Signin.php">Login</a></p>
             </form>
         </div>
-        <script src="js/register_val.js"></script>
+        <script src="js/register_val.js"></script> 
     </div>
 </body>
 </html>

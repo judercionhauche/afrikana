@@ -1,20 +1,24 @@
 <?php
 // In add_to_cart_actions.php
-
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 require_once('../controllers/general_controller.php'); 
 session_start(); // Start the session
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     if(isset($_SESSION['customer_id'])) {
         $customer_id = $_SESSION['customer_id'];
     } else {
+        $_SESSION['login_error'] = "Login to add to cart";
+        header("Location: ../login.php");
         exit(); // Exit if customer ID is not set
     }
 
-    if (isset($_POST['p_id']) && isset($_POST['qty']) && isset($_POST['customer_id'])) {
+    if (isset($_POST['p_id']) && isset($_POST['qty'])) {
         $product_id = htmlspecialchars($_POST['p_id']);
         $quantity = htmlspecialchars($_POST['qty']);
-       
+        $customer_id = $_SESSION['customer_id'];
         if ($customer_id) {
             $controller = new General_Class();
             $result = $controller->fetch_one_cart_item($product_id, $customer_id);

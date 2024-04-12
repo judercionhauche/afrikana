@@ -73,9 +73,7 @@ require_once('../controllers/general_controller.php');
             exit(); // Terminate script execution after redirection
         }
     } else {
-        // Order insertion failed
-        // Handle the failure accordingly
-        // For example, redirect the user to an error page
+      
         header('Location: order_error.php');
         exit(); // Terminate script execution after redirection
     }

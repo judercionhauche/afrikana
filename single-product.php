@@ -8,8 +8,8 @@ session_start();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>pillloMart</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Afrikanah Wellness</title>
+    <link rel="icon" href="uploads/Afrikanah.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -135,14 +135,14 @@ session_start();
                         <?php
                         $product_id = $_GET['id'];
                         include_once(__DIR__ . '/controllers/general_controller.php');
-                        $customer_id = $_SESSION['customer_id'];
+                        
 
                         $product = fetch_one_product($product_id);
                         ?>
                         <div class="single_product_img">
                             <!-- Use PHP to dynamically set the image source -->
                         </div>
-                        <img src="img/uploads/<?php echo $product['product_image']; ?>" alt="<?php echo $product['product_title']; ?>" class="img-fluid">
+                        <img src="<?= substr($product["product_image"], 3) ?? ''; ?>" alt="<?php echo $product['product_title']; ?>" class="img-fluid">
 
                     </div>
                 </div>
@@ -153,7 +153,7 @@ session_start();
 
                         <form action="actions/add_to_cart_actions.php" method="POST">
                             <input type="hidden" name="p_id" value="<?php echo $product['product_id']; ?>">
-                            <input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>"> <!-- Assuming $customer_id contains the customer's ID -->
+                             <!-- Assuming $customer_id contains the customer's ID -->
                             <div class="card_area">
                                 <div class="product_count_area">
                                     <p>Quantity</p>

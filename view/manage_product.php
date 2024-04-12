@@ -41,7 +41,7 @@
                         <td><?php echo htmlspecialchars($product["product_brand"]); ?></td>
                         <td>
                             <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; background-color: #ccc; display: inline-block;">
-                                <img src="../img/uploads/<?php echo htmlspecialchars($product["product_image"]); ?>" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="../uploads/<?php echo htmlspecialchars($product["product_image"]); ?>" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                         </td>
 

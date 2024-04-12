@@ -10,8 +10,8 @@ error_reporting(E_ALL);
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>pillloMart</title>
-  <link rel="icon" href="img/favicon.png">
+  <title>Afrikanah Wellness</title>
+    <link rel="icon" href="img/Afrikanah.png">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- animate CSS -->
@@ -155,7 +155,7 @@ error_reporting(E_ALL);
                   <td>
                     <div class="media">
                       <div style="width: 140px; height: 110px; overflow: hidden; background-color: #ccc; display: inline-block;">
-                        <img src="../afrikana/img/uploads/<?php echo htmlspecialchars($item["product_image"]); ?>" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="uploads/<?php echo htmlspecialchars($item["product_image"]); ?>" alt="Product Image" style="width: 100%; height: 100%; object-fit: cover;">
                       </div>
                     </div>
                     <div class="media-body">
@@ -163,7 +163,7 @@ error_reporting(E_ALL);
                     </div>
                   </td>
                   <td>
-                    <h5><?php echo '$' . $item['product_price']; ?></h5>
+                    <h5><?php echo '' . $item['product_price']; ?></h5>
                   </td>
                   <td>
                     <div class="product_count" id="product_count_<?php echo $item['p_id']; ?>">
@@ -188,7 +188,7 @@ error_reporting(E_ALL);
                       <input type="hidden" name="p_id" value="<?php echo htmlspecialchars($item["p_id"]); ?>">
                       <input type="hidden" name="qty" value="<?php echo htmlspecialchars($item["qty"]); ?>">
                       <input type="hidden" name="c_id" value="<?php echo htmlspecialchars($item["c_id"]); ?>">
-                      <button type="submit" class="btn_1" name="delete" style="width: auto; padding: 5px 10px; margin-left:-130px; ">Remove item</button>
+                      <button type="submit" class="btn_1" name="delete" style="width: auto; padding: 5px 10px; ">Remove item</button>
                     </form>
                   </td>
                 </tr>
@@ -214,7 +214,7 @@ error_reporting(E_ALL);
             <h5 style="margin-right: 10px;">Subtotal:</h5>
           </td>
           <td>
-            <h5>$<?php echo $subtotal; ?></h5>
+            <h5>GHC<?php echo $subtotal; ?></h5>
           </td>
         </tr>
       </table>

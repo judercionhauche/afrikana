@@ -14,9 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = trim($_POST['Customer_City']);
     $user_role = 1;
 
+    $customer = new General_Class();
 
     // Check if the email already exists
-    $emailExists = check_user_by_email($email);
+    $emailExists = $customer->check_user_by_email($email);
 
     if ($emailExists) {
         // Email already exists, return error message

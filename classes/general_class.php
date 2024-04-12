@@ -25,15 +25,22 @@ class General_Class extends db_connection {
         $sql = "SELECT COUNT(*) AS count FROM customer WHERE customer_email = '$escaped_email'";
         
         // Execute the query
-        $result = $this->db_fetch_one($sql);
-        
-        // Check if a row was returned
-        if ($result && $result['count'] > 0) {
-            return true; // User with the given email exists
-        } else {
-            return false; // User with the given email does not exist
+        $result = mysqli_query($this->db_conn(), $sql);
+    
+        // Check if the query was successful
+        if ($result) {
+            // Fetch the result row
+            $row = mysqli_fetch_assoc($result);
+            
+            // Check if a row was returned
+            if ($row && $row['count'] > 0) {
+                return true; // User with the given email exists
+            }
         }
+        
+        return false; // User with the given email does not exist or query failed
     }
+    
     
     public function register_user($customer_name, $customer_email, $customer_pass, $customer_country, $customer_city, $customer_contact, $user_role) {
         $hashed_password = password_hash($customer_pass, PASSWORD_DEFAULT);
@@ -205,7 +212,7 @@ class General_Class extends db_connection {
                     FROM orders
                     INNER JOIN payment ON orders.customer_id = payment.customer_id
                     INNER JOIN `customer` ON orders.customer_id = customer.customer_id
-                    ORDER BY orders.order_id DESC
+                    ORDER BY orders.order_id ASC
                     LIMIT 10"; // Add ORDER BY and LIMIT to select the last 10 orders
         
             $result = $this->db_fetch_all($sql); 

@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ini_set('display_errors', 1);
@@ -5,13 +6,18 @@ error_reporting(E_ALL);
 require_once('controllers/general_controller.php');
 $categories = get_all_categories();
 $brands = get_all_brands();
-$customer_id = $_SESSION['customer_id'];
-$email = $_SESSION['email'];
-$order_id = select_last_inserted_order();
-$items = fetch_items_by_order_id($order_id);
-$order_id1 = get_last_inserted_order_id(); 
+$customer_id = isset($_SESSION['customer_id']) ? $_SESSION['customer_id'] : null;
+$order_id = isset($_SESSION['customer_id']) ? select_last_inserted_order() : null;
+$items = $order_id ? fetch_items_by_order_id($order_id) : [];
 
-$order_by_id = fetch_order_by_id($order_id1);
+// If customer_id is not set or there are no items in the order, display appropriate message
+if (!$customer_id || empty($items)) {
+$messagE = "You have not bought anything yet.";
+} else {
+    $order_id1 = get_last_inserted_order_id(); 
+    $order_by_id = fetch_order_by_id($order_id1);
+    
+}
 ?>
 
 <!doctype html>
@@ -21,8 +27,8 @@ $order_by_id = fetch_order_by_id($order_id1);
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>pillloMart</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Afrikanah Wellness</title>
+    <link rel="icon" href="uploads/Afrikanah.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -148,16 +154,23 @@ $order_by_id = fetch_order_by_id($order_id1);
   <section class="confirmation_part section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="confirmation_tittle">
+        <div class="col-lg-12">
+            <div class="confirmation_tittle">
+                <?php if ($customer_id): ?>
                     <span>Thank you. Your order has been received. Your cart is empty</span>
-                </div>
+                <?php else: ?>
+                    <span>Please log in to see your receipt or order items.</span>
+                <?php endif; ?>
             </div>
+        </div>
+            <?php if ($customer_id && !empty($items)): ?>
             <div class="col-lg-6 col-lx-4">
                 <div class="single_confirmation_details">
                     <h4>order info</h4>
                     <ul>
-                    <?php foreach ($order_by_id as $order): ?>
+                    <?php foreach ($order_by_id as $order):                        
+                        ?>
+                        
 
                         <li>
                         <p>Invoice number</p><span>: <?php echo $order['invoice_no']; ?></span>
@@ -175,6 +188,8 @@ $order_by_id = fetch_order_by_id($order_id1);
                 </div>
             </div>         
             </div>
+            <?php endif; ?>
+
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -211,6 +226,9 @@ $order_by_id = fetch_order_by_id($order_id1);
                           
                         </tfoot>
                     </table>
+                    <div class="col-lg-12">
+                <button onclick="window.print()" style="background-color: purple; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">Print Confirmation</button>
+            </div>
                 </div>
             </div>
         </div>
@@ -221,7 +239,9 @@ $order_by_id = fetch_order_by_id($order_id1);
 
     <!--::footer_part start::-->
     <footer class="footer_part">
+    
         <div class="footer_iner section_bg">
+            
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-lg-8">
@@ -247,6 +267,9 @@ $order_by_id = fetch_order_by_id($order_id1);
                             <a href="#"><i class="fab fa-google-plus-g"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
+                        <div class="row">
+    
+        </div>
                     </div>
                 </div>
             </div>
@@ -258,7 +281,6 @@ $order_by_id = fetch_order_by_id($order_id1);
                     <div class="col-lg-12">
                         <div class="copyright_text">
                             <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
                             <div class="copyright_link">
                                 <a href="#">Turms & Conditions</a>

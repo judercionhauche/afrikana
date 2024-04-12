@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_keywords = $_POST["productKeyWords"];
       
     if(isset($_POST["submit"])) {
-        $target_dir = "../img/uploads";
+        $target_dir = "../uploads";
         $file = $_FILES["image"];
         $fileName = $file["name"];
         $fileTmpName = $file["tmp_name"];
@@ -35,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Handle file upload for customer image
         $target_file = $target_dir ."/". $NewImageName;
-        move_uploaded_file($fileTmpName[0],$target_dir."/".$NewImageName );
+        move_uploaded_file($fileTmpName[0],$target_file);
 
     if ($fileError === 0){
-        add_prod($product_cat,$product_brand,$product_title,$product_price,$product_description,$NewImageName,$product_keywords);
+        add_prod($product_cat,$product_brand,$product_title,$product_price,$product_description,$target_file,$product_keywords);
        header('Location: ../index.php');
     } else {
         echo "Error Uploading the Image";

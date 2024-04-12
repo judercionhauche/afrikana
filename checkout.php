@@ -6,7 +6,7 @@ require_once('controllers/general_controller.php');
 $categories = get_all_categories();
 $brands = get_all_brands();
 $customer_id = $_SESSION['customer_id'];
-$email = $_SESSION['email'];
+$email = $_SESSION['customer_email'];
 
 if (!isset($_SESSION['customer_id'])) {
     header("Location: login.php");
@@ -28,7 +28,7 @@ if (!isset($_SESSION['customer_id'])) {
             echo "Failed to insert order details for product ID: $product_id";
             // Handle the error as needed
         } else {
-            echo "Order details inserted successfully for product ID: $product_id";
+
         }
     }
 }
@@ -42,8 +42,8 @@ if (!isset($_SESSION['customer_id'])) {
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>pillloMart</title>
-  <link rel="icon" href="img/favicon.png">
+  <title>Afrikanah Store</title>
+    <link rel="icon" href="img/favicon.png">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- animate CSS -->
@@ -255,7 +255,7 @@ if (!isset($_SESSION['customer_id'])) {
                 <a href="#">
                     <?php echo $item['product_title']; ?>
                     <span class="middle">x <?php echo $item['qty']; ?></span>
-                    <span class="last">$<?php echo $item['product_price'] * $item['qty']; ?></span>
+                    <span class="last"><?php echo $item['product_price'] * $item['qty']; ?></span>
                 </a>
             </li>
             <?php endforeach; ?>

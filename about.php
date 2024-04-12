@@ -5,8 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>pillloMart</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Afrikanah Wellness</title>
+    <link rel="icon" href="uploads/Afrikanah.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -129,10 +129,10 @@
                 <div class="col-lg-8">
                     <div class="about_us_content">
                         <h5>Our Mission</h5>
-                        <h3>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin. Pellentesque id dolor tempor sapien feugiat ultrices nec sed neque.</h3>
+                        <h3>Afrikanah Wellness is committed to fostering a workplace culture where positive mental health and healing are prioritized. Our mission is to provide within work communities with the consumable products and recommendations they need to effectively manage stress and prevent burnout. Through our products and resources, we aim to positively influence their coping mechanisms and empower them to prioritize mental well-being. </h3>
                         <div class="about_us_video">
-                            <img src="img/about_us_video.png" alt="#" class="img-fluid">
-                            <a class="about_video_icon popup-youtube" href="https://www.youtube.com/watch?v=DWHB6nTyKDI"></a>
+                            <img src="img/Afrikanah.png" alt="#" class="img-fluid">
+                            <a class="about_video_icon popup-youtube" href="https://www.youtube.com/watch?v=RvKFUvsp7wY"></a>
                         </div>
                     </div>
                 </div>
@@ -147,14 +147,12 @@
             <div class="row justify-content-between">
                 <div class="col-lg-6">
                     <div class="feature_part_tittle">
-                        <h3>Credibly innovate granular
-                        internal or organic sources
-                        whereas standards.</h3>
+                        <h3>Get sorted in Afrikanah Wellness, check your favorite products now!.</h3>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="feature_part_content">
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness.</p>
+                        <p>Afrikanah store is more than a brand, it buids a community of wellness. We care about the performance and wellbeing of our clients.</p>
                     </div>
                 </div>
             </div>
@@ -198,22 +196,22 @@
                             <div class="client_img">
                                 <img src="img/client.png" alt="#">
                             </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
+                            <p>Buying from Afrikanah Wellness has been nothing but a remarkable experience. Delivery on time! Everything about them is amazing. I can say I am stress free because of them"".</p>
+                            <h5>- John Self</h5>
                         </div>
                         <div class="single_client_review">
                             <div class="client_img">
                                 <img src="img/client_1.png" alt="#">
                             </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
+                            <p>"Afrikanah Wellness has truly transformed my wellness journey. Their products are not only effective but also delivered promptly. I've never felt better! Thank you for making self-care so accessible and stress-free!"</p>
+                            <h5>- Stanley Ndlovu</h5>
                         </div>
                         <div class="single_client_review">
                             <div class="client_img">
                                 <img src="img/client_2.png" alt="#">
                             </div>
-                            <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                            <h5>- Micky Mouse</h5>
+                            <p>"I can't thank Afrikanah Wellness enough for their outstanding service and top-notch products. From the moment I placed my order to the speedy delivery, everything was impeccable. I've never felt more rejuvenated and stress-free. Highly recommend!"</p>
+                            <h5>- Jose Nhauche</h5>
                         </div>
                     </div>
                 </div>
@@ -229,7 +227,7 @@
                 <div class="col-lg-8">
                     <div class="subscribe_part_content">
                         <h2>Get promotions & updates!</h2>
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
+                        <p>"I can't thank Afrikanah Wellness enough for their outstanding service and top-notch products. From the moment I placed my order to the speedy delivery, everything was impeccable. I've never felt more rejuvenated and stress-free. Highly recommend!"</p>
                         <div class="subscribe_form">
                             <input type="email" placeholder="Enter your mail">
                             <a href="#" class="btn_1">Subscribe</a>
@@ -279,7 +277,6 @@
                         <div class="col-lg-12">
                             <div class="copyright_text">
                                 <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
                                 <div class="copyright_link">
                                     <a href="#">Turms & Conditions</a>

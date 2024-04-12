@@ -1,8 +1,7 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
+$customer_id= $_SESSION['customer_id'];  
+  
 ?>
 
 <!doctype html>
@@ -12,8 +11,8 @@ error_reporting(E_ALL);
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>pillloMart</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Afrikanah Wellness</title>
+    <link rel="icon" href="uploads/Afrikanah.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -38,6 +37,49 @@ error_reporting(E_ALL);
     .banner_img img {
         position: relative;
         top: 190px; /* Move the image down by 10 pixels */
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .popup-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 90%; /* Adjusted width */
+      height: 90%; /* Adjusted height */
+      max-width: 90%;
+      max-height: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
     }
 </style>
 
@@ -98,7 +140,19 @@ error_reporting(E_ALL);
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="login.php">login</a>
+                                    <a class="nav-link" onclick="openPopup()" href="#">Chat</a>
+                                </li>
+                                <li class="nav-item">
+                                <?php
+                                    session_start();
+                                    if(isset($customer_id)){
+                                        echo '<a class="nav-link" href="actions/logout.php">logout</a>';
+
+                                    }   
+                                    else{
+                                        echo '<a class="nav-link" href="login.php">login</a>';
+                                    }                                    
+                                ?>
                                 </li>
                             </ul>
                             
@@ -140,6 +194,7 @@ error_reporting(E_ALL);
                 </div>
             </div>
         </div>
+        
         <div class="banner_img">
             <img src="img/afribook.jpg" alt="#" class="img-fluid">
         </div>
@@ -161,7 +216,7 @@ error_reporting(E_ALL);
                             </div>
                             <div class="col-lg-5 col-sm-6">
                                 <div class="single_product_content">
-                                    <h5>Stars from 50GHC</h5>
+                                    <h5>Stars from $15</h5>
                                     <h2> <a href="single-product.php">Urban Platter 100% Dark Chocolate Buttons - Intense, Plant-Based Indulgence</a> </h2>
                                     <a href="product_list.php" class="btn_3">Explore Now</a>
                                 </div>
@@ -178,7 +233,7 @@ error_reporting(E_ALL);
                             </div>
                             <div class="col-lg-5 col-sm-6">
                                 <div class="single_product_content">
-                                    <h5>Starts from 150GHC</h5>
+                                    <h5>Starts from $15</h5>
                                     <h2> <a href="single-product.php">Afrikanah Wellness Shirt: Embracing Authenticity with African Prints</a> </h2>
                                     <a href="product_list.php" class="btn_3">Explore Now</a>
                                 </div>
@@ -195,7 +250,7 @@ error_reporting(E_ALL);
                             </div>
                             <div class="col-lg-5 col-sm-6">
                                 <div class="single_product_content">
-                                    <h5>Starts from 40GH</h5>
+                                    <h5>Starts from $15</h5>
                                     <h2> <a href="single-product.php" style="height:200px">Afrikanah Journal, color: black: Sleek and Stylish</a> </h2>
                                     <a href="product_list.php" class="btn_3">Explore Now</a>
                                 </div>
@@ -232,10 +287,12 @@ error_reporting(E_ALL);
                     <div class="col-lg-4 col-sm-6">
                         <div class="single_product_item">
                             <div class="single_product_item_thumb">
-                                <img src="img/uploads/<?php echo $product['product_image']; ?>" alt="<?php echo $product['product_title']; ?>" class="img-fluid">
+                            <a href="single-product.php?id=<?= $product["product_id"];?>">
+                            <img style="width: 100%; height: 100%; object-fit: cover;" src="<?= substr($product["product_image"], 3) ?? ''; ?>" alt="<?php echo $product["product_title"] ?? ''; ?>" class="img-fluid">
+                </a>
                             </div>
                             <h3> <a href="single-product.php"><?php echo $product['product_title']; ?></a> </h3>
-                            <p>From GHC <?php echo $product['product_price']; ?></p>
+                            <p>From $ <?php echo $product['product_price']; ?></p>
                         </div>
                     </div>
                     <?php
@@ -341,7 +398,24 @@ error_reporting(E_ALL);
             </div>
         </div>
     </section>
-    <!-- subscribe part end -->
+    
+    <div id="popupContainer" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <!-- Your popup content here -->
+    <iframe src="https://landbot.online/v3/H-2187470-YGXOL18ZVTJBWIF5/index.html" frameborder="0"></iframe>
+  </div>
+</div>
+
+<script>
+  function openPopup() {
+    document.getElementById('popupContainer').style.display = 'block';
+  }
+
+  function closePopup() {
+    document.getElementById('popupContainer').style.display = 'none';
+  }
+</script>
 
     <!--::footer_part start::-->
     <footer class="footer_part">

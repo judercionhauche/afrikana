@@ -15,8 +15,8 @@ $brands = get_all_brands();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>pillloMart</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Afrikanah Wellness</title>
+    <link rel="icon" href="uploads/Afrikanah.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -87,14 +87,7 @@ $brands = get_all_brands();
                                 </li>
                                 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.php" id="navbarDropdown_2"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.php"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.php">Single blog</a>
-                                    </div>
+                                    
                                 </li>
                                 
                                 <li class="nav-item">
@@ -203,8 +196,10 @@ if (isset($_GET['search_query'])) {
             <div class="col-lg-6 col-sm-6">
                 <div class="single_product_item">
                     <div style="width: 100%; height: 250px;" class="img_container">
-                        <img style="width: 100%; height: 100%; object-fit: cover;" src="img/uploads/<?= $product["product_image"] ?? ''; ?>" alt="<?php echo $product["product_title"] ?? ''; ?>" class="img-fluid">
-                    </div>
+                    <a href="single-product.php?id=<?= $product["product_id"];?>">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="<?= substr($product["product_image"], 3) ?? ''; ?>" alt="<?php echo $product["product_title"] ?? ''; ?>" class="img-fluid">
+                 </a>        
+            </div>
                     <h3><a href="single-product.php?id=<?= $product["product_id"];?>"><?php echo htmlspecialchars($product["product_title"] ?? ''); ?></a></h3>
                     <p>From $<?php echo htmlspecialchars($product["product_price"] ?? ''); ?></p>
                 </div>
@@ -363,7 +358,6 @@ if (isset($_GET['search_query'])) {
                         <div class="col-lg-12">
                             <div class="copyright_text">
                                 <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
                                 <div class="copyright_link">
                                     <a href="#">Turms & Conditions</a>

@@ -83,6 +83,10 @@ $all_orders = fetch_order_details();
                     <a href="../managebrand.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Manage Brands</a>
                     <a href="../managecategory.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Manage Category</a>
                     <a href="../addprod.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Add Product</a>
+                    <a href="../addbrand.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Add Brand</a>
+                    <a href="../addcategory.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Add Category</a>
+
+
 
 
 
